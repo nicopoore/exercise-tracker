@@ -45,16 +45,14 @@ app.post('/api/exercise/add', async (req, res) => {
   const userId = req.body.userId
   const desc = req.body.description
   const duration = req.body.duration
+
   let date = req.body.date
-  
   if (!date) {
     date = new Date()
   }
   
   const createdExercise = await createAndSaveExercise(userId, desc, duration, date)
-
   return res.json(await formatExercise(createdExercise))
-
 })
 
 app.get('/api/exercise/log', async (req, res) => {
@@ -64,10 +62,10 @@ app.get('/api/exercise/log', async (req, res) => {
   const limit = parseInt(req.query.limit)
 
   const userLog = await createUserLog(userId, to, from, limit)
-
   return res.json(await formatLog(userLog, userId))
-
 })
+
+/* Routing */
 
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)

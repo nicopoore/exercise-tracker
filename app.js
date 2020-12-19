@@ -28,7 +28,7 @@ const exerciseSchema = new Schema({
 const User = mongoose.model('User', userSchema, 'users')
 const Exercise = mongoose.model('Exercise', exerciseSchema, 'exercises')
 
-/* Model functions */
+/* Model methods */
 
 // Users
 
@@ -73,10 +73,7 @@ const formatExercise = async full_object => {
   }
 }
 
-//const createUserLog = (userId) => Exercise.find({ userId: userId }).select('-userId').exec()
-
 const createUserLog = (userId, to, from, limit) => {
-
   to = to ? to : new Date(8640000000000000)
   from = from ? from : new Date(-8640000000000000)
 
