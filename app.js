@@ -67,7 +67,7 @@ const formatExercise = async full_object => {
   return finalResponse = {
     _id: full_object.userId,
     username: username,
-    date: full_object.date,
+    date: full_object.date.toDateString(),
     duration: full_object.duration,
     description: full_object.description
   }
@@ -91,7 +91,7 @@ const mapLog = log => {
     return {
       description: exer.description,
       duration: exer.duration,
-      date: exer.date,
+      date: exer.date.toDateString(),
     }
   })
 }

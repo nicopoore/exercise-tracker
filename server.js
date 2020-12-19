@@ -1,3 +1,5 @@
+/* Config */
+
 require('dotenv').config()
 const express = require('express')
 const app = express()
@@ -13,6 +15,8 @@ app.get('/', (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
+/* Imports from app.js */
+
 const createAndSaveUser = require('./app.js').createAndSaveUser
 const showAllUsers = require('./app.js').showAllUsers
 const checkUsername = require('./app.js').checkUsername
@@ -21,6 +25,8 @@ const createAndSaveExercise = require('./app.js').createAndSaveExercise
 const createUserLog = require('./app.js').createUserLog
 const formatExercise = require('./app.js').formatExercise
 const formatLog = require('./app.js').formatLog
+
+/* Endpoints & requests */
 
 app.post('/api/exercise/new-user', async (req, res) => {
   const username = req.body.username
