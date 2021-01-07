@@ -1,1 +1,1 @@
-# [Exercise Tracker](https://secret-cove-94553.herokuapp.com/)
+# [Exercise Tracker Live Demo](https://secret-cove-94553.herokuapp.com/)
